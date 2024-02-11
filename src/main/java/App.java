@@ -8,5 +8,22 @@ public class App {
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
         System.out.println(bean.getMessage());
+
+        HelloWorld bean2 =
+                (HelloWorld) applicationContext.getBean("helloworld");
+        System.out.println(bean2.getMessage());
+
+
+        Cat cat1 = (Cat) applicationContext.getBean("cat");
+
+
+        Cat cat2 = (Cat) applicationContext.getBean("cat");
+
+
+        boolean isHelloWorldSingleton = bean == bean2;
+        System.out.println("HelloWorld равен bean2? " + isHelloWorldSingleton);
+
+        boolean isCatSingleton = cat1 == cat2;
+        System.out.println("Cat beans равны? " + isCatSingleton);
     }
 }
